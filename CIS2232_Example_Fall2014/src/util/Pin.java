@@ -5,6 +5,10 @@
 
 package util;
 
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
 /**
  *
  * @author bjmaclean
@@ -30,6 +34,21 @@ public class Pin {
         
         //generate the code for this based on the description above.
         
+        Date date = new Date();
+        DateFormat dateFormat = new SimpleDateFormat("yyyy,MM,dd");
+        String[] stringArray = dateFormat.format(date).split(",");
+        int dateTotal = 0;
+        for(String str : stringArray){
+            dateTotal += Integer.parseInt(str);
+        }
+        char[] charArray = courseCode.toCharArray();
+        int courseTotal = 0;
+        for(char str : charArray){
+            int num = (int) str;
+            courseTotal += num;
+        }
+        
+        pin = dateTotal * courseTotal;
         return pin;
         
     }
