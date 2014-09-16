@@ -22,8 +22,20 @@ public class Student {
         The record layout is made up of the student id (3), the first name (15), 
         the last name (15) and the dob (8).
     */
-    public static String RECORD_LAYOUT= "000,               ,               ,        ";
+    public static String RECORD_LAYOUT= "000,               ,               ,        "+System.getProperty("line.separator");
     public static final int NUMBER_OF_RECORDS = 100;
+    
+    /**
+     * This method should format the student information in a string matching the record 
+     * layout.
+     * 
+     * @return 
+     */
+    
+    public String toStringFormatted(){
+        //Have to pad the strings to make sure 
+        return this.studentId;  
+    }
     
     public Student(){
         System.out.println("Please enter the student ID");

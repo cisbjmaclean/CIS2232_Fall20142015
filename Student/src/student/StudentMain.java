@@ -58,7 +58,7 @@ public class StudentMain {
                         Student student = new Student();
                         students.put(student.getStudentId(), student);
                         //FileUtility.fileWrite(writer, student.fileOutputString());
-                        
+                        //FileUtility.fileWriteRandom(student);
                         break;
                     case "B":
                         for (String variableName : students.keySet()) {
