@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import util.FileUtility;
 
 /**
  *
@@ -31,6 +32,8 @@ public class StudentMain {
     private static Path path = Paths.get("c:\\cis2232\\student.txt");
 
     public static void main(String[] args) {
+        
+        FileUtility.initializeFile("c:\\cis2232\\student.txt");
         HashMap<String, Student> students = new HashMap();
         String option;
         Scanner input = new Scanner(System.in);
@@ -54,7 +57,8 @@ public class StudentMain {
                     case "A":
                         Student student = new Student();
                         students.put(student.getStudentId(), student);
-                        fileWrite(writer, student.fileOutputString());
+                        //FileUtility.fileWrite(writer, student.fileOutputString());
+                        
                         break;
                     case "B":
                         for (String variableName : students.keySet()) {
@@ -84,11 +88,6 @@ public class StudentMain {
 
     }
 
-    public static void fileWrite(BufferedWriter writer, String toWrite) throws IOException {
-        writer.write(toWrite);
-        writer.newLine();
-        writer.flush();
 
-    }
 
 }

@@ -17,6 +17,13 @@ public class Student {
     private String studentId;
     private String lastName, firstName, dob;
     
+    public static int RECORD_LENGTH=38;
+    /*
+        The record layout is made up of the student id (3), the first name (15), 
+        the last name (15) and the dob (8).
+    */
+    public static String RECORD_LAYOUT= "000,               ,               ,        ";
+    public static final int NUMBER_OF_RECORDS = 100;
     
     public Student(){
         System.out.println("Please enter the student ID");
