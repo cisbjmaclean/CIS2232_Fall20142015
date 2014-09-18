@@ -29,19 +29,30 @@ public class StudentMain {
     /**
      * @param args the command line arguments
      */
-    private static Path path = Paths.get("c:\\cis2232\\student.txt");
+    private static Path path = Paths.get(Student.FILE_NAME);
 
     public static void main(String[] args) {
+
         
-        FileUtility.initializeFile("c:\\cis2232\\student.txt");
-        HashMap<String, Student> students = new HashMap();
+        //If the file does not exist, create it.
+        if (!Files.exists(path)) {
+            FileUtility.initializeFile(Student.FILE_NAME);
+        }
+
+
+        //create the hashmap of students and load it.
+        
+        HashMap<String, Student> students = FileUtility.loadFromRandomAccessFile(Student.FILE_NAME);
+       
+        
+        
         String option;
         Scanner input = new Scanner(System.in);
 
         String menu = "Please select from option below"
                 + "\nA)Add a student"
                 + "\nB)View all students"
-                + "\nC)Edit a student"
+                + "\nC)View a student"
                 + "\nX)Exit";
 
         System.out.println(menu);
@@ -76,6 +87,12 @@ public class StudentMain {
                 option = input.nextLine().toUpperCase();
 
             }
+            
+            //At the end replace the file with the modified hashmap.
+            
+            FileUtility.saveStudents(students, Student.FILE_NAME);
+            
+            
         } catch (IOException ex) {
             System.err.println("There was an IO error");
         } finally {
@@ -87,7 +104,5 @@ public class StudentMain {
         }
 
     }
-
-
 
 }
