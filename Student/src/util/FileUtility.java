@@ -10,14 +10,17 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.nio.ByteBuffer;
+import java.nio.channels.FileChannel;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import static java.nio.file.StandardOpenOption.CREATE;
+import static java.nio.file.StandardOpenOption.WRITE;
 import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import student.Student;
+import static student.Student.RECORD_LAYOUT;
 
 /**
  *
@@ -71,6 +74,32 @@ public class FileUtility {
         }
     }
 
+        /**
+     * 
+     * @param s
+     * @param fileName 
+     */
+    
+    public static void addRecord(String s, String fileName) {
+        //this method takes the output string from a new student and writes it
+        //on the corresponding line of the txt file
+        Path file = Paths.get(fileName);
+        byte[] data = s.getBytes();
+        ByteBuffer buffer = ByteBuffer.wrap(data);
+        try {
+            FileChannel fc = null;
+            int id = Integer.parseInt(s.substring(0, 3).trim());
+            System.out.println(id);
+            fc = (FileChannel) Files.newByteChannel(file, WRITE);
+            fc.position((id-1) * RECORD_LAYOUT.length());
+            fc.write(buffer);
+            fc.close();
+        } catch (NumberFormatException | IOException e) {
+            System.out.println("Error message: " + e);
+        }
+    }
+
+    
     /**
      * This method will load a load students into a HashMap
      *

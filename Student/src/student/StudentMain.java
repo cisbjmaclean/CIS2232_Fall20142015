@@ -68,6 +68,8 @@ public class StudentMain {
                     case "A":
                         Student student = new Student();
                         students.put(student.getStudentId(), student);
+                        FileUtility.addRecord(student.fileOutputString(),Student.FILE_NAME);
+
                         //FileUtility.fileWrite(writer, student.fileOutputString());
                         //FileUtility.fileWriteRandom(student);
                         break;

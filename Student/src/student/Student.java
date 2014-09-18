@@ -101,7 +101,7 @@ public class Student {
         String studentIdPart = String.format("%"+STUDENT_ID_LENGTH+"s", String.valueOf(studentId));
         String studentFirstNamePart = String.format("%"+NAME_LENGTH+"s", String.valueOf(firstName));
         String studentLastNamePart = String.format("%"+NAME_LENGTH+"s", String.valueOf(lastName));
-        String studentDOBPart = String.format("%"+DOB_LENGTH+"s", String.valueOf(lastName));
+        String studentDOBPart = String.format("%"+DOB_LENGTH+"s", String.valueOf(dob));
         
         return studentIdPart+","+studentFirstNamePart+","+studentLastNamePart+","+studentDOBPart+System.getProperty("line.separator");
     }
