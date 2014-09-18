@@ -4,21 +4,30 @@ import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
+import java.nio.file.FileSystem;
+import java.nio.file.FileSystems;
 import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import static java.nio.file.StandardOpenOption.CREATE;
 import static java.nio.file.StandardOpenOption.WRITE;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.sound.midi.Instrument;
 import student.Student;
 import static student.Student.RECORD_LAYOUT;
 
@@ -43,6 +52,19 @@ public class FileUtility {
         writer.flush();
     }
 
+     public static  HashMap<String, Student> readObjectFromFile() throws FileNotFoundException, IOException, ClassNotFoundException{
+        String pathLocation = Student.FILE_NAME_SER;
+         HashMap<String, Student> readInstrument;
+         FileInputStream fileIn = new FileInputStream(pathLocation);
+         ObjectInputStream in = new ObjectInputStream(fileIn);
+         readInstrument = ( HashMap<String, Student>) in.readObject();
+         in.close();
+         fileIn.close();
+         return readInstrument;
+    }
+ 
+
+    
     /**
      * This method will initialize the file to a starting point with no student
      * information in it. It will have student ids from 0-99.
@@ -52,26 +74,29 @@ public class FileUtility {
      * @param fileName
      */
     public static void initializeFile(String fileName) {
-        //could use this to initialize 100 records in the file.
-        Path file = Paths.get(fileName);
-        byte[] data = Student.RECORD_LAYOUT.getBytes();
-        ByteBuffer buffer = ByteBuffer.wrap(data);
 
-        try {
-            OutputStream output = new BufferedOutputStream(Files.newOutputStream(file, CREATE));
-            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(output));
+        
 
-            String tempStudentId = "";
-            for (int i = 0; i < Student.NUMBER_OF_RECORDS; ++i) {
-                tempStudentId = String.format("%" + Student.STUDENT_ID_LENGTH + "s", String.valueOf(i));
-                String tempReplaced = Student.RECORD_LAYOUT.substring(Student.STUDENT_ID_LENGTH);
-                writer.write(tempStudentId + tempReplaced, 0, Student.RECORD_LAYOUT.length());
-            }
-            writer.close();
-
-        } catch (IOException ex) {
-            Logger.getLogger(FileUtility.class.getName()).log(Level.SEVERE, null, ex);
-        }
+//        //could use this to initialize 100 records in the file.
+//        Path file = Paths.get(fileName);
+//        byte[] data = Student.RECORD_LAYOUT.getBytes();
+//        ByteBuffer buffer = ByteBuffer.wrap(data);
+//
+//        try {
+//            OutputStream output = new BufferedOutputStream(Files.newOutputStream(file, CREATE));
+//            BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(output));
+//
+//            String tempStudentId = "";
+//            for (int i = 0; i < Student.NUMBER_OF_RECORDS; ++i) {
+//                tempStudentId = String.format("%" + Student.STUDENT_ID_LENGTH + "s", String.valueOf(i));
+//                String tempReplaced = Student.RECORD_LAYOUT.substring(Student.STUDENT_ID_LENGTH);
+//                writer.write(tempStudentId + tempReplaced, 0, Student.RECORD_LAYOUT.length());
+//            }
+//            writer.close();
+//
+//        } catch (IOException ex) {
+//            Logger.getLogger(FileUtility.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
 
         /**
@@ -99,6 +124,31 @@ public class FileUtility {
         }
     }
 
+    
+    /**
+     * This method will write an object to a file.  
+     * 
+     * @param objectToWrite 
+     */
+    public static void writeObjectToFile(HashMap outputToWrite){
+        String pathLocation = "c:\\cis2232\\object.ser";
+        FileSystem fs = FileSystems.getDefault();
+        Path path = fs.getPath(pathLocation);
+ 
+        try {
+         FileOutputStream fileOut =
+         new FileOutputStream(pathLocation);
+         ObjectOutputStream out = new ObjectOutputStream(fileOut);
+         out.writeObject(outputToWrite);
+         out.close();
+         fileOut.close();
+         System.out.printf("Serialized data is saved in "+pathLocation);        } catch (NoSuchFileException ex) {
+ 
+        } catch (IOException ex1) {
+            Logger.getLogger(FileUtility.class.getName()).log(Level.SEVERE, null, ex1);
+        }
+ 
+    }
     
     /**
      * This method will load a load students into a HashMap

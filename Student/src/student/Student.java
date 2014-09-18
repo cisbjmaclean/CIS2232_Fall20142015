@@ -6,14 +6,16 @@
 
 package student;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 /**
  *
  * @author bjmaclean
  */
-public class Student {
+public class Student implements Serializable{
     public static final String FILE_NAME = "c:\\cis2232\\student.txt";
+    public static final String FILE_NAME_SER = "c:\\cis2232\\object.ser";
     public static Scanner input = new Scanner(System.in);
     
     //Student attributes

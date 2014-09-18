@@ -42,8 +42,17 @@ public class StudentMain {
 
         //create the hashmap of students and load it.
         
-        HashMap<String, Student> students = FileUtility.loadFromRandomAccessFile(Student.FILE_NAME);
+        HashMap<String, Student> students= null;
+        try {
+            students = FileUtility.readObjectFromFile();
+//FileUtility.loadFromRandomAccessFile(Student.FILE_NAME);
+        } catch (IOException ex) {
+            Logger.getLogger(StudentMain.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(StudentMain.class.getName()).log(Level.SEVERE, null, ex);
+        }
        
+//        HashMap<String, Student> students= FileUtility.loadFromRandomAccessFile(Student.FILE_NAME);
         
         
         String option;
@@ -53,6 +62,7 @@ public class StudentMain {
                 + "\nA)Add a student"
                 + "\nB)View all students"
                 + "\nC)View a student"
+                + "\nF)Save Hashmap"
                 + "\nX)Exit";
 
         System.out.println(menu);
@@ -80,6 +90,10 @@ public class StudentMain {
                         break;
                     case "C":
                         System.out.println("Future functionality");
+                        break;
+                    case "F":
+                        //Save the hashmap to a file.
+                        FileUtility.writeObjectToFile(students);
                         break;
                     default:
                         System.err.println("Invalid option");
