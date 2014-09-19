@@ -42,7 +42,7 @@ public class CIS2232_Example_Fall2014 {
             try {
                 file.createNewFile();
                 BufferedWriter writer;
-                writer = new BufferedWriter(new FileWriter(file));
+                writer = new BufferedWriter(new FileWriter(file,true));
                 writer.write(userName);
                 writer.newLine();   
                 writer.write(courseID);
