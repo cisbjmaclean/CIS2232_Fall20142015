@@ -52,16 +52,6 @@ public class FileUtility {
         writer.flush();
     }
 
-     public static  HashMap<String, Student> readObjectFromFile() throws FileNotFoundException, IOException, ClassNotFoundException{
-        String pathLocation = Student.FILE_NAME_SER;
-         HashMap<String, Student> readInstrument;
-         FileInputStream fileIn = new FileInputStream(pathLocation);
-         ObjectInputStream in = new ObjectInputStream(fileIn);
-         readInstrument = ( HashMap<String, Student>) in.readObject();
-         in.close();
-         fileIn.close();
-         return readInstrument;
-    }
  
 
     
@@ -207,10 +197,6 @@ public class FileUtility {
 
             String tempStudentId = "";
             //Loop through the students in the HashMap
-            for (Student theStudent : students.values()) {
-                System.out.println(theStudent + "\n");
-                writer.write(theStudent.fileOutputString(), 0, Student.RECORD_LAYOUT.length());
-            }
 
             writer.close();
 
