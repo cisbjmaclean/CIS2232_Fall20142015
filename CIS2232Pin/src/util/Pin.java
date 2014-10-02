@@ -1,5 +1,5 @@
 /**
- * This class will contain code assiated with the Pin number required to checkin
+ * This class will contain code assiated with the Pin number required to check in
  * to the class attendance.
  */
 package util;
@@ -53,4 +53,8 @@ public class Pin {
 
     }
 
+    public static boolean validatePin(String courseName, String pin){
+        
+        return pin.equals(String.valueOf(getTodaysPin(courseName)));
+    }
 }

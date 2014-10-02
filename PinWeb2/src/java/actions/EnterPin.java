@@ -5,17 +5,12 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.apache.commons.beanutils.BeanUtils;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-import org.apache.struts.action.ActionMessage;
-import org.apache.struts.action.ActionMessages;
 import util.Pin;
 
 /**
@@ -60,9 +55,11 @@ public class EnterPin extends Action {
             } catch (IOException ex) {
                 System.err.println("Error happened.");
             }
+            findForward = mapping.findForward("success");
 
         } else {
             System.out.println("Pin is  inCorrect");
+            findForward = mapping.findForward("fail");
         }
 
         

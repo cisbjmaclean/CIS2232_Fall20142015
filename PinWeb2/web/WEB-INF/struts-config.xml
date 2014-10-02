@@ -16,6 +16,8 @@
 
     <global-forwards>
         <forward name="welcome"  path="/Welcome.do"/>
+        <forward name="success"  path="/success.jsp"/>
+        <forward name="fail"  path="/fail.jsp"/>
     </global-forwards>
 
     <action-mappings>
