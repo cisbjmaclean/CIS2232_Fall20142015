@@ -1,0 +1,33 @@
+/* 
+    CISIS style (clf))
+    Created on : 9-Jun-2014, 11:51:10 PM
+    Author     : BJ
+*/
+
+html {  background-color:#FFFFCC;  font-family: arial;    }
+body {  background-color:#FFFFCC;  font-family: arial;    }
+div {  background-color:#FFFFCC;  font-family: arial;    }
+h1 {        background-color:FFFFF0;    color:#333300;    text-align: center;  padding: 10px; -webkit-border-radius: 12px; -moz-border-radius: 12px; margin-right: 10px   }
+h2 {        background-color:#FFFFCC;    color:#333300;    text-align: center;    }
+h3 {        background-color:#FFFFCC;    color:#333300;    text-align: center;    }
+table {    background-color: #FFFFCC;    width: 100%;    }
+td {    border: 0px;    text-align: center;    }
+p {    color:#330033;    text-indent: 20px;        }
+input[type=submit] { width:200px; padding:5px 10px; background:#ccc; border:0 none;
+cursor:pointer;
+-webkit-border-radius: 5px;
+border-radius: 5px; }
+input[type=reset] { width:200px; padding:5px 15px; background:#ccc; border:0 none;
+cursor:pointer;
+-webkit-border-radius: 5px;
+border-radius: 5px; }
+input[type=button] { width:200px; padding:5px 10px; background:#ccc; border:0 none;
+cursor:pointer;
+-webkit-border-radius: 5px;
+border-radius: 5px; }
+.error { color: red; }
+.infoMessageCheck { color: green;}
+.warnExclaim { color: goldenrod; }
+.success {
+    color: green;
+}
