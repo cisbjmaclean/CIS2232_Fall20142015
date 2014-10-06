@@ -12,3 +12,4 @@
 /HelloSpring/dist/
 /PinWeb2/dist/
 /PinWebStruts/nbproject/private/
+*.class
