@@ -1,11 +1,13 @@
 package controller;
 
+import forms.Login;
 import forms.Menu;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Controller for the Welcome
@@ -27,10 +29,11 @@ public class WelcomeController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String onSubmit(@ModelAttribute("menu") Menu menu) {
+    public ModelAndView onSubmit(@ModelAttribute("menu") Menu menu) {
         System.out.println("The form was submitted and the action was ***" + menu.getAction()+ "***");
-        return "login";
-
+        ModelAndView mv = new ModelAndView("login");
+        mv.addObject("login", new Login());
+        return mv;
     }
 }
 
