@@ -3,20 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/CIS2232/current/CISIS_Template_Application/src/java/forms/Menu.java</file>
-            <file>file:/C:/CIS2232/current/CISIS_Template_Application/src/java/controller/MenuController.java</file>
-            <file>file:/C:/CIS2232/current/CISIS_Template_Application/src/java/forms/Person.java</file>
-            <file>file:/C:/CIS2232/current/CISIS_Template_Application/web/WEB-INF/dispatcher-servlet.xml</file>
-            <file>file:/C:/CIS2232/current/CISIS_Template_Application/src/java/controller/SpringTilesController.java</file>
-            <file>file:/C:/CIS2232/current/CISIS_Template_Application/web/redirect.jsp</file>
-            <file>file:/C:/CIS2232/current/CISIS_Template_Application/web/WEB-INF/views/personList.jsp</file>
-            <file>file:/C:/CIS2232/current/CISIS_Template_Application/web/WEB-INF/views/template/SiteTemplateNoMenu.jsp</file>
-            <file>file:/C:/CIS2232/current/CISIS_Template_Application/web/WEB-INF/layouts/layouts.xml</file>
-            <file>file:/C:/CIS2232/current/CISIS_Template_Application/web/WEB-INF/web.xml</file>
-            <file>file:/C:/CIS2232/current/CISIS_Template_Application/web/WEB-INF/views/welcome.jsp</file>
-            <file>file:/C:/CIS2232/current/CISIS_Template_Application/web/WEB-INF/jsp/index.jsp</file>
-            <file>file:/C:/CIS2232/current/CISIS_Template_Application/web/WEB-INF/applicationContext.xml</file>
-            <file>file:/C:/CIS2232/current/CISIS_Template_Application/web/WEB-INF/layouts/views.xml</file>
+            <file>file:/C:/Users/BJ/Documents/GitHub/CIS2232_Fall20142015/CISIS_Template_Application/web/WEB-INF/dispatcher-servlet.xml</file>
+            <file>file:/C:/Users/BJ/Documents/GitHub/CIS2232_Fall20142015/CISIS_Template_Application/web/WEB-INF/layouts/views.xml</file>
+            <file>file:/C:/Users/BJ/Documents/GitHub/CIS2232_Fall20142015/CISIS_Template_Application/src/java/controller/WelcomeController.java</file>
+            <file>file:/C:/Users/BJ/Documents/GitHub/CIS2232_Fall20142015/CISIS_Template_Application/web/WEB-INF/views/welcome.jsp</file>
         </group>
     </open-files>
 </project-private>
