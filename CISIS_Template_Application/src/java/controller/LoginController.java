@@ -2,42 +2,54 @@ package controller;
 
 import forms.Login;
 import forms.Menu;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.validation.BindException;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.SimpleFormController;
+import org.springframework.web.servlet.view.RedirectView;
+
 
 /**
- * Controller for the Welcome
+ * Controller for the Hello
  *
  * @author bjmaclean
  */
 @Controller
-@RequestMapping("/login.htm")
-public class LoginController { 
+public class LoginController {
 
-    private Login login = new Login();
-
-//    @RequestMapping(method = RequestMethod.GET)
-//    public String loadInformation(ModelMap model) {
-//        
-//        //Create a variable for the login.
-//        
-//        this.login = new Login();
-//        model.addAttribute("login", this.login);
-//        return "login";
+//    public LoginController() {
+//        //Initialize controller properties here or 
+//        //in the Web Application Context
+//
+//        setCommandClass(Login.class);
+//        setCommandName("login");
+//        setSuccessView("welcome");
+//        setFormView("login");
 //    }
 
+    @RequestMapping(method = RequestMethod.GET)
+    public String showLogin(ModelMap model) {
+        //model.addAttribute("login", new Login());
+        return "login";
+    }
+
+    
+    //Use onSubmit instead of doSubmitAction 
+    //when you need access to the Request, Response, or BindException objects
     @RequestMapping(method = RequestMethod.POST)
-    public ModelAndView onSubmit(@ModelAttribute("login") Login login) {
-        System.out.println("The form was submitted and the username was ***"+login.getUsername()+"***");
-        ModelAndView mv = new ModelAndView("welcome");
-        Menu temp = new Menu();
-        temp.setAction("Back from login");
-        mv.addObject("menu", temp);
+    protected ModelAndView onSubmit(
+            HttpServletRequest request,
+            HttpServletResponse response,
+            Object command,
+            BindException errors) throws Exception {
+        System.out.println("The onSubmit in LoginController was run.");
+        ModelAndView mv = new ModelAndView(new RedirectView("welcome.htm"));
         return mv;
+            
     }
 }
-

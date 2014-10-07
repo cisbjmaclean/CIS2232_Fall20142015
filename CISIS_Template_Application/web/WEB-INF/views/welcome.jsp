@@ -10,13 +10,11 @@
         <center>
             <h2>Welcome to CISIS</h2>
             <table>
+                     
                 <tr>
-                    <td>Action:</td>
-                    <td><form:input path="action" />
+                    <td>        <input type="submit" name="action" value="Submit">
                     </td>
-
-                </tr>          
-                <tr><td>        <input type="submit" value="Submit"></td></tr>
+                </tr>
             </table>
         </center>
         </body>
