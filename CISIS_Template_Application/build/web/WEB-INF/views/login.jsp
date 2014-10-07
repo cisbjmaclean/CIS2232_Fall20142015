@@ -11,7 +11,7 @@
         <html:base/>
     </head>
     <spring:nestedPath path="login">
-        <form action="" method="post">
+        <form action="login" method="post">
             <body>
             <center>
                 <h2>Please provide your login details</h2>

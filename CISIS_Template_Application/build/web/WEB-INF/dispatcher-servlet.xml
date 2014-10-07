@@ -13,7 +13,7 @@
     <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
 
 <!--    <bean class="controller.WelcomeController" name="welcomeController"/>
-    <bean class="controller.LoginControllerBackup" name="loginController"/>-->
+    <bean class="controller.LoginController" name="loginController"/>-->
     <!--
     Most controllers will use the ControllerClassNameHandlerMapping above, but
     for the index controller we are using ParameterizableViewController, so we must
@@ -28,15 +28,14 @@
         </property>
     </bean>-->
 
-    <bean id="viewResolver"
+<!--    <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
           p:prefix="/WEB-INF/jsp/"
-          p:suffix=".jsp" />
+          p:suffix=".jsp" />-->
 
 <bean class="org.springframework.web.servlet.mvc.annotation. DefaultAnnotationHandlerMapping" />
 
-<bean id="menu" class="forms.Menu" />
-<bean id="login" class="forms.Login" />
+
 
 <bean class="org.springframework.web.servlet.mvc.annotation. AnnotationMethodHandlerAdapter" />
 </beans>

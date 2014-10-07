@@ -6,8 +6,6 @@ This provides the standard header for each page in the application.
 --%>
 
 <html>
-    <head></head>
-    <html:form action="">
         <table>
             <tr>
                 <td>
@@ -15,5 +13,4 @@ This provides the standard header for each page in the application.
                 </td>
             </tr>
         </table>
-    </html:form>
 </html>

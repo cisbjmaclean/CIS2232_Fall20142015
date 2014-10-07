@@ -17,7 +17,7 @@ import static sun.security.jgss.GSSUtil.login;
  * @author bjmaclean
  */
 @Controller
-@RequestMapping("/welcome.htm")
+@RequestMapping("welcome")
 public class WelcomeController { 
 
     private Menu menu;
@@ -34,12 +34,10 @@ public class WelcomeController {
     public ModelAndView onSubmit(@ModelAttribute("menu") Menu menu) {
         
         System.out.println("The form was submitted and the action was ***" + menu.getAction()+ "***");
-//        ModelAndView mv = new ModelAndView(new RedirectView("login.htm"));
         ModelAndView mv = new ModelAndView("login");
         Login temp = new Login();
-        temp.setUsername("test");
+        temp.setUsername("test"); //Setting a value to show it is populated on the form. 
         mv.addObject("login", temp);
-        //redirect:/login.htm
         return mv;
     }
 }
