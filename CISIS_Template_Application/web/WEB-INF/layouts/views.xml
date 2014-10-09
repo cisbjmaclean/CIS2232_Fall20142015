@@ -8,7 +8,7 @@
 	    <put-attribute name="body"	value="/WEB-INF/views/welcome.jsp" />
 	</definition>
 
-	<definition name="login" extends="DefaultTemplateNoMenu">
+	<definition name="login" extends="DefaultTemplate">
 	    <put-attribute name="body"	value="/WEB-INF/views/login.jsp" />
 	</definition>
 

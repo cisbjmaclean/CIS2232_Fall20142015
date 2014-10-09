@@ -13,6 +13,53 @@ import java.util.Date;
  */
 public class Pin {
 
+    String name;
+    String courseName;
+    int pinEntered;
+    boolean validated = false;
+
+    public Pin(String name, String courseName, int pinEntered) {
+        this.name = name;
+        this.courseName = courseName;
+        this.pinEntered = pinEntered;
+    }
+
+    public boolean isValidated() {
+        return validated;
+    }
+
+    public void setValidated(boolean validated) {
+        this.validated = validated;
+    }
+
+    
+    
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
+    public int getPinEntered() {
+        return pinEntered;
+    }
+
+    public void setPinEntered(int pinEntered) {
+        this.pinEntered = pinEntered;
+    }
+    
+    
+    
     /**
      *
      * This method will provide the PIN for a given course. This will be a hash
