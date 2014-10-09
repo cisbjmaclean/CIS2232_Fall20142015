@@ -31,7 +31,7 @@
 
 
                     <tr>
-                        <td>
+                        <td colspan="2">
                             <input type="submit" value="Login"/>
                         </td>
                     </tr>
