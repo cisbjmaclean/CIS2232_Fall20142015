@@ -7,7 +7,6 @@
     <spring:nestedPath path="menu">
     <form action="welcome" method="post">
         <body>
-        <center>
             <h2>Welcome to CISIS</h2>
             <table>
                      
@@ -16,7 +15,6 @@
                     </td>
                 </tr>
             </table>
-        </center>
         </body>
     </form>
     </spring:nestedPath>

@@ -5,13 +5,12 @@
 
 <html:html lang="true">
     <spring:nestedPath path="menu">
-    <form action="welcome" method="post">
+    <form action="" method="post">
         <body>
             <h2>Welcome to CISIS</h2>
             <table>
-                     
                 <tr>
-                    <td>        <input type="submit" name="action" value="Submit">
+                    <td>Welcome to the application!
                     </td>
                 </tr>
             </table>

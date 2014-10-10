@@ -13,7 +13,7 @@
     <spring:nestedPath path="login">
         <form action="login" method="post">
             <body>
-            <center>
+
                 <h2>Please provide your login details</h2>
                 <table>
                     <tr>
@@ -36,7 +36,6 @@
                         </td>
                     </tr>
                 </table>
-            </center>
             </body>
         </form>
     </spring:nestedPath>

@@ -5,7 +5,7 @@
 
 <html:html lang="true">
     <spring:nestedPath path="menu">
-    <form action="login" method="post">
+    <form action="menu" method="post">
         <body>
             <table>                     
                 <tr>

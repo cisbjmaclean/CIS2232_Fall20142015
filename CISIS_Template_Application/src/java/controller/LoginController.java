@@ -16,18 +16,28 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 @RequestMapping("login")
-public class LoginController { 
+public class LoginController {
 
     private Login login;
 
     @RequestMapping(method = RequestMethod.POST)
     public ModelAndView onSubmit(@ModelAttribute("login") Login login) {
-        System.out.println("The form was submitted and the username was ***"+login.getUsername()+"***");
-        ModelAndView mv = new ModelAndView("welcome");
-        Menu temp = new Menu();
-        temp.setAction("Back from login");
-        mv.addObject("menu", temp);
+        System.out.println("The form was submitted and the username was ***" + login.getUsername() + "***");
+
+        //pass validation if they enter "TEST" and "TEST"
+        ModelAndView mv;
+        if (login.getUsername().equalsIgnoreCase("TEST")
+                && login.getPassword().equalsIgnoreCase("TEST")) {
+            mv = new ModelAndView("main");
+
+        } else {
+            mv = new ModelAndView("login");
+            Menu temp = new Menu();
+            temp.setAction("Back from login");
+            mv.addObject("menu", temp);
+
+        }
+
         return mv;
     }
 }
-
