@@ -1,7 +1,10 @@
 package controller;
 
+import business.AccessBO;
 import forms.Login;
 import forms.Menu;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -26,16 +29,16 @@ public class LoginController {
 
         //pass validation if they enter "TEST" and "TEST"
         ModelAndView mv;
-        if (login.getUsername().equalsIgnoreCase("TEST")
-                && login.getPassword().equalsIgnoreCase("TEST")) {
+        boolean validCredentials = false;
+        try {
+            validCredentials = AccessBO.validate(login);
+        } catch (Exception ex) {
+            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        if (validCredentials){
             mv = new ModelAndView("main");
-
         } else {
             mv = new ModelAndView("login");
-            Menu temp = new Menu();
-            temp.setAction("Back from login");
-            mv.addObject("menu", temp);
-
         }
 
         return mv;
