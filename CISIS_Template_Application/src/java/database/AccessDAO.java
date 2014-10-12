@@ -9,8 +9,6 @@ import forms.Login;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import util.ConnectionUtils;
 import util.Util;
 
@@ -38,7 +36,7 @@ public class AccessDAO {
             // This is the sql to obtain the student information from the database.  Note the student_id 
             // attribute is set in the prepared statement (would replace the ?).
             //***************************************************************************************
-            sql = "SELECT * FROM user WHERE username = ?";
+            sql = "SELECT * FROM member_access WHERE user_id = ?";
 
             ps = conn.prepareStatement(sql);
             if (Util.debugOn) {
@@ -48,7 +46,7 @@ public class AccessDAO {
             rs = ps.executeQuery();
             while (rs.next()) {
                 if (Util.debugOn) {
-                    System.out.println("Password for " + rs.getString("username")
+                    System.out.println("Password for " + rs.getString("user_id")
                             + " is " + rs.getString("password"));
                 }
                 if (login.getPassword().equals(rs.getString("password"))) {
