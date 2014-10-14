@@ -12,7 +12,7 @@
     http://www.springframework.org/schema/tx
     http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
 	
-	<context:annotation-config />
+	<context:annotation-config /> 
 	<context:component-scan base-package="controller" />
 
 	<mvc:annotation-driven />
@@ -41,5 +41,11 @@
 			</list>
 		</property>
 	</bean>
+
+    <!-- Register the messages.properties -->  
+    <bean id="messageSource"  
+          class="org.springframework.context.support.ReloadableResourceBundleMessageSource">  
+        <property name="basename" value="/WEB-INF/messages" />  
+    </bean> 
 
 </beans>

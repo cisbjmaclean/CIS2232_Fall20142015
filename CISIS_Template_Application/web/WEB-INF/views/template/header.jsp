@@ -1,11 +1,6 @@
-<%@page contentType="text/html"%>
-<%@page pageEncoding="UTF-8"%>
-
 <%--
 This provides the standard header for each page in the application.
 --%>
-
-<html>
         <table>
             <tr>
                 <td>
@@ -13,4 +8,3 @@ This provides the standard header for each page in the application.
                 </td>
             </tr>
         </table>
-</html>

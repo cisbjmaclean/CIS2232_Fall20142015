@@ -1,13 +1,13 @@
-<%@page contentType="text/html"%>
-<%@page pageEncoding="UTF-8"%>
-<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<html:html lang="true">
-    <spring:nestedPath path="menu">
+
+<spring:nestedPath path="menu">
     <form action="welcome" method="post">
-        <body>
-            <h2>Welcome to CISIS</h2>
+        <h2>start<fmt:message key="NotEmpty.productList.product_price" />end</h2>
             <table>
                      
                 <tr>
@@ -15,8 +15,5 @@
                     </td>
                 </tr>
             </table>
-        </body>
     </form>
     </spring:nestedPath>
-
-</html:html>

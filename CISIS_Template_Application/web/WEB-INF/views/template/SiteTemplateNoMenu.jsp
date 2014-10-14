@@ -1,6 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
 
 <%-- Layout Tiles 
   This layout render a header, left menu, body and footer.
@@ -11,13 +15,13 @@
   @param footer Footer
 --%>
 
-<HTML>
+<html>
     <head><link rel="stylesheet" type="text/css" href="http://bjmac.hccis.info:8080/styles/styles.css"></head>
 
     <body> 
         <table>
             <tr>
-                <td></td>
+                <td>start<fmt:message key="NotEmpty.productList.product_price"/>end</td>
                 <td align="center"><tiles:insertAttribute name="header"  /></td>
             </tr>
             <tr>

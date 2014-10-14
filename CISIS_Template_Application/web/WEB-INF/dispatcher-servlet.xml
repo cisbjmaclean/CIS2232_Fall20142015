@@ -12,30 +12,9 @@
     
     <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
 
-<!--    <bean class="controller.WelcomeController" name="welcomeController"/>
-    <bean class="controller.LoginController" name="loginController"/>-->
-    <!--
-    Most controllers will use the ControllerClassNameHandlerMapping above, but
-    for the index controller we are using ParameterizableViewController, so we must
-    define an explicit mapping for it.
-    -->
-<!--    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
-        <property name="mappings">
-            <props>
-                <prop key="welcome.htm">welcomeController</prop>
-                <prop key="login.htm">loginController</prop>
-            </props>
-        </property>
-    </bean>-->
+    <bean class="org.springframework.web.servlet.mvc.annotation. DefaultAnnotationHandlerMapping" />
 
-<!--    <bean id="viewResolver"
-          class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-          p:prefix="/WEB-INF/jsp/"
-          p:suffix=".jsp" />-->
-
-<bean class="org.springframework.web.servlet.mvc.annotation. DefaultAnnotationHandlerMapping" />
+    <bean class="org.springframework.web.servlet.mvc.annotation. AnnotationMethodHandlerAdapter" />
 
 
-
-<bean class="org.springframework.web.servlet.mvc.annotation. AnnotationMethodHandlerAdapter" />
 </beans>
