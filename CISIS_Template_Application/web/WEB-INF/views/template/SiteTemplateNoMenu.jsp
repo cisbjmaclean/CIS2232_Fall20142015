@@ -21,7 +21,7 @@
     <body> 
         <table>
             <tr>
-                <td>start<fmt:message key="NotEmpty.productList.product_price"/>end</td>
+                <td></td>
                 <td align="center"><tiles:insertAttribute name="header"  /></td>
             </tr>
             <tr>
