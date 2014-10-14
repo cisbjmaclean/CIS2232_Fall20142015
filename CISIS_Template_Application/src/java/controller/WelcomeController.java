@@ -2,11 +2,13 @@ package controller;
 
 import forms.Login;
 import forms.Menu;
+import java.util.Map;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 import static sun.security.jgss.GSSUtil.login;
@@ -23,10 +25,15 @@ public class WelcomeController {
     private Menu menu;
 
     @RequestMapping(method = RequestMethod.GET)
-    public String showMenu(ModelMap model) {
+    public String showMenu(
+           @RequestParam Map<String,String> allRequestParams, ModelMap model) {
+        System.out.println("parameter for test="+allRequestParams.get("test"));
         this.menu = new Menu();
         menu.setAction("test");
         model.addAttribute("menu", menu);
+        
+        
+        
         return "welcome";
     }
 

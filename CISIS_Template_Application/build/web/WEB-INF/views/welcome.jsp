@@ -13,6 +13,12 @@
                     <td>        <input type="submit" name="action" value="Submit">
                     </td>
                 </tr>
+                
+                <tr>
+                    <td><a href="http://localhost:8080/CISIS_Template_Application/welcome?test=123">test hyperlink</a>
+                    </td>
+                </tr>
+                
             </table>
     </form>
     </spring:nestedPath>
