@@ -3,6 +3,7 @@ package controller;
 import forms.Login;
 import forms.Menu;
 import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -25,11 +26,15 @@ public class WelcomeController {
     private Menu menu;
 
     @RequestMapping(method = RequestMethod.GET)
-    public String showMenu(
+    public String showMenu(HttpServletRequest request, 
            @RequestParam Map<String,String> allRequestParams, ModelMap model) {
         System.out.println("parameter for test="+allRequestParams.get("test"));
         this.menu = new Menu();
         menu.setAction("test");
+        request.getSession().setAttribute("test","This was set");
+        String backFromSession = (String) request.getSession().getAttribute("test");
+        System.out.println("Received back from session="+backFromSession);
+        
         model.addAttribute("menu", menu);
         
         
