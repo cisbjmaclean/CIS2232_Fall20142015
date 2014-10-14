@@ -1,10 +1,12 @@
 package controller;
 
 import business.AccessBO;
+import database.CodeValueDAO;
 import forms.Login;
 import forms.Menu;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -24,7 +26,7 @@ public class LoginController {
     private Login login;
 
     @RequestMapping(method = RequestMethod.POST)
-    public ModelAndView onSubmit(@ModelAttribute("login") Login login) {
+    public ModelAndView onSubmit(HttpServletRequest request, @ModelAttribute("login") Login login) {
         System.out.println("The form was submitted and the username was ***" + login.getUsername() + "***");
 
         //pass validation if they enter "TEST" and "TEST"
@@ -36,6 +38,7 @@ public class LoginController {
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
         }
         if (validCredentials){
+            CodeValueDAO.loadCodes(request);
             mv = new ModelAndView("main");
         } else {
             mv = new ModelAndView("login");

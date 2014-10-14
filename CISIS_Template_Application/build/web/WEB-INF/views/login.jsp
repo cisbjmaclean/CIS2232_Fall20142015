@@ -18,13 +18,13 @@
                 <table>
                     <tr>
                         <td>Username:</td>
-                        <td><form:input path="username" />
+                        <td><form:input path="username" value="bjmaclean"/>
                         </td>
 
                     </tr>          
                     <tr>
                         <td>Password:</td>
-                        <td><form:input path="password" />
+                        <td><form:input path="password" value="bjmacleanpw" />
                         </td>
 
                     </tr>          

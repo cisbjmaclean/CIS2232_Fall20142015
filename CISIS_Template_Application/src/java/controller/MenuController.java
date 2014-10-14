@@ -24,10 +24,13 @@ public class MenuController {
         ModelAndView mv;
         if (menu.getAction().equalsIgnoreCase("Logout")) {
             mv = new ModelAndView("welcome");
-        } else 
+        } else if (menu.getAction().equalsIgnoreCase("View Provinces")) {
+            System.out.println("User wants to view the provinces");
+            mv = new ModelAndView("main");
+            mv.addObject("message", "User selected View Provinces");
+        } else {
             mv = new ModelAndView("welcome");
-        
-        
+        }
 
         return mv;
     }

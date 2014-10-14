@@ -29,6 +29,7 @@ public class WelcomeController {
     public String showMenu(HttpServletRequest request, 
            @RequestParam Map<String,String> allRequestParams, ModelMap model) {
         System.out.println("parameter for test="+allRequestParams.get("test"));
+        System.out.println("parameter for test2="+allRequestParams.get("test2"));
         this.menu = new Menu();
         menu.setAction("test");
         request.getSession().setAttribute("test","This was set");
