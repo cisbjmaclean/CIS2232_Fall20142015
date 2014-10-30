@@ -8,7 +8,7 @@
                     <b>${message}</b>
                 </td>
             </tr>
-            <c:forEach var="thisEntry" items="${sessionScope.journal}"
+            <c:forEach var="thisEntry" items="${journal}"
                        varStatus="loopCounter">
                 <tr>
                     <td><c:out value="${thisEntry.dateOfEntry}" /></td>

@@ -6,8 +6,10 @@
 package fitness;
 
 import java.nio.file.*;
-import java.util.Scanner;
 import java.util.StringTokenizer;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 
 /**
  *
@@ -16,7 +18,10 @@ import java.util.StringTokenizer;
 public class JournalEntry {
 
     //Attributes of a journal entry
+    @NotNull
+    @Size(min=1, max=100, message="The description must be between {min} and {max} characters.")
     private String entry;
+    
     private String dateOfEntry;
     private String weight;
 

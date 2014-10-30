@@ -31,7 +31,7 @@
 
                     <tr>
                         <td>Description:</td>
-                        <td><form:textarea path="entry" value="" />
+                        <td><form:textarea path="entry" value="" /><form:errors path="entry" cssClass="error" />
                         </td>
 
                     </tr>          

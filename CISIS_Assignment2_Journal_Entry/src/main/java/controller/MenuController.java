@@ -27,11 +27,19 @@ public class MenuController {
         ModelAndView mv;
         if (menu.getAction().equalsIgnoreCase("Logout")) {
             mv = new ModelAndView("welcome");
+        
+        /* If the user chooses to add a journal entry, send them to the 
+           addJournal mv.  
+         */
         } else if (menu.getAction().equalsIgnoreCase("Add Journal Entry")) {
             System.out.println("User wants to ad a journal entry");
             mv = new ModelAndView("addJournal");
             mv.addObject("journalEntry", new JournalEntry());
             mv.addObject("message", "User selected add journal entry");
+        /* If the user chooses to view journal entries, send them to the 
+           viewJournalEntries view. Make sure that the journal entries are loaded
+           into the mv before returning.
+         */        
         } else if (menu.getAction().equalsIgnoreCase("View Journal Entries")) {
             System.out.println("User wants to view the entries");
             mv = new ModelAndView("viewJournalEntries");
