@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+	"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+	"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<definition name="welcome" extends="DefaultTemplateNoMenu">
+	    <put-attribute name="body"	value="/WEB-INF/views/welcome.jsp" />
+	</definition>
+
+
+	<definition name="addJournal" extends="DefaultTemplate">
+	    <put-attribute name="body"	value="/WEB-INF/views/journal/journalEntry.jsp" />
+	</definition>
+
+	<definition name="viewJournalEntries" extends="DefaultTemplate">
+	    <put-attribute name="body"	value="/WEB-INF/views/journal/viewJournalEntries.jsp" />
+	</definition>
+
+        <definition name="login" extends="DefaultTemplateNoMenu">
+	    <put-attribute name="body"	value="/WEB-INF/views/login.jsp" />
+	</definition>
+
+        <definition name="main" extends="DefaultTemplate">
+	    <put-attribute name="body"	value="/WEB-INF/views/main.jsp" />
+	</definition>
+
+        <definition name="viewCountries" extends="DefaultTemplate">
+	    <put-attribute name="body"	value="/WEB-INF/views/viewCountries.jsp" />
+	</definition>
+
+        <definition name="viewCodeValues" extends="DefaultTemplate">
+	    <put-attribute name="body"	value="/WEB-INF/views/viewCodeValues.jsp" />
+	</definition>
+
+        <definition name="viewCodes" extends="DefaultTemplate">
+	    <put-attribute name="body"	value="/WEB-INF/views/viewCodes.jsp" />
+	</definition>
+
+	<definition name="personList" extends="DefaultTemplate">
+	    <put-attribute name="body"	value="/WEB-INF/views/personList.jsp" />
+	</definition>
+	
+</tiles-definitions>
