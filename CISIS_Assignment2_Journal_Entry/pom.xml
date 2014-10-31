@@ -23,6 +23,7 @@
 
 
     <dependencies>
+
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -86,7 +87,8 @@
             <artifactId>jstl</artifactId>
             <version>${javax.jstl.version}</version>
             <scope>runtime</scope>
-        </dependency>    
+        </dependency>   
+        
     </dependencies>
 
     <build>

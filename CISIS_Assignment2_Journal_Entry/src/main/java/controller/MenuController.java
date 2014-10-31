@@ -35,7 +35,7 @@ public class MenuController {
             System.out.println("User wants to ad a journal entry");
             mv = new ModelAndView("addJournal");
             mv.addObject("journalEntry", new JournalEntry());
-            mv.addObject("message", "User selected add journal entry");
+            
         /* If the user chooses to view journal entries, send them to the 
            viewJournalEntries view. Make sure that the journal entries are loaded
            into the mv before returning.

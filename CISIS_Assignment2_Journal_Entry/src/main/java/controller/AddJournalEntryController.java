@@ -22,11 +22,14 @@ import org.springframework.web.servlet.ModelAndView;
 public class AddJournalEntryController {
 
     @RequestMapping(method = RequestMethod.POST)
-    public ModelAndView onSubmit(HttpServletRequest request, @ModelAttribute("journalEntry") @Valid JournalEntry journalEntry, BindingResult result) {
+    public ModelAndView onSubmit(@ModelAttribute("journalEntry") @Valid JournalEntry journalEntry, BindingResult result, HttpServletRequest request) {
 
         ModelAndView mv;
         // If there are validation errors
-        if (result.hasErrors()) {
+        // Will have to investigate why the hasErrors is not working.  
+        // It works on Glassfish, but not Tomcat.  Some import analysis required.  
+        if (result.hasErrors() || journalEntry.getEntry().length()>100 || journalEntry.getEntry().isEmpty() ) {
+            System.out.println("There were errors");
             mv = new ModelAndView("addJournal");
             mv.addObject("message","The journal entry is invalid");
             mv.addObject("journalEntry",journalEntry);

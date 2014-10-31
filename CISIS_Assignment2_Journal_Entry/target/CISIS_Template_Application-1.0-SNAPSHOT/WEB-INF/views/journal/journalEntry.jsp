@@ -18,20 +18,20 @@
                 <table>
                     <tr>
                         <td>Date</td>
-                        <td><form:input path="dateOfEntry" value=""/>
+                        <td><form:input path="dateOfEntry"/>
                         </td>
 
                     </tr>          
                     <tr>
                         <td>Weight:</td>
-                        <td><form:input path="weight" value="" />
+                        <td><form:input path="weight" />
                         </td>
 
                     </tr>          
 
                     <tr>
                         <td>Description:</td>
-                        <td><form:textarea path="entry" value="" /><form:errors path="entry" cssClass="error" />
+                        <td><form:textarea path="entry" /><form:errors path="entry" cssClass="error" />${message}
                         </td>
 
                     </tr>          
