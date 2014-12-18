@@ -8,8 +8,14 @@
                     <b>${message}</b>
                 </td>
             </tr>
+            <tr>
+                <td>Date</td>
+                <td>Weight</td>
+                <td>Description</td>
+            </tr>
             <c:forEach var="thisEntry" items="${journal}"
                        varStatus="loopCounter">
+
                 <tr>
                     <td><c:out value="${thisEntry.dateOfEntry}" /></td>
                     <td><c:out value="${thisEntry.weight}" /></td>

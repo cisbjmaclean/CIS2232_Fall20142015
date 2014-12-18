@@ -1,6 +1,7 @@
 package controller;
 
 import beans.CodeValue;
+import database.JournalEntryDAO;
 import fitness.Journal;
 import fitness.JournalEntry;
 import forms.Login;
@@ -44,7 +45,8 @@ public class MenuController {
             System.out.println("User wants to view the entries");
             mv = new ModelAndView("viewJournalEntries");
             Journal journal = new Journal();
-            journal.loadEntries();
+            //journal.loadEntries();
+            journal.setJournal(JournalEntryDAO.getAllEntries());
             mv.addObject("message","Here are the entries");
             mv.addObject("journal", journal.getJournal());
         } else if (menu.getAction().equalsIgnoreCase("View Countries")) {

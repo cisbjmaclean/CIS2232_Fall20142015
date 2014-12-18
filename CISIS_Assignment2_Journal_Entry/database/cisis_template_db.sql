@@ -465,3 +465,15 @@ INSERT INTO `pd_type` (`pd_code`, `pd_title_eng`, `pd_title_fr`, `pd_hour`, `pd_
 (18, 'Professional, Trade, and Educational Exhibits', 'Professional, Trade, and Educational Exhibits', 0.5, 'Per event(Max 2 c hrs/yr)', 'Per event(Max 2 c hrs/yr)', 0),
 (19, 'Participation on Registration Board', 'Participation on Registration Board', 1.0, 'Per year', 'Per year', 0),
 (20, 'Preparing Examinations/ Evaluating Candidates', 'Preparing Examinations/ Evaluating Candidates', 1.0, '1 c hr/yr', '1 c hr/yr', 0);
+
+--
+-- Table structure for the journal_entry table
+--
+
+CREATE TABLE IF NOT EXISTS `journal_entry` (
+	`entry_id` int(3) NOT NULL AUTO_INCREMENT,
+	`entry_content` varchar(100) NOT NULL,
+	`entry_date` varchar(8) NOT NULL,
+	`entry_weight` varchar(3) NOT NULL,
+    PRIMARY KEY(`entry_id`)
+	) ENGINE=InnoDB DEFAULT CHARSET=latin1;

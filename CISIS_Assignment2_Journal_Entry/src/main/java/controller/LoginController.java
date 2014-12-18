@@ -2,6 +2,7 @@ package controller;
 
 import business.AccessBO;
 import database.CodeValueDAO;
+import database.JournalEntryDAO;
 import fitness.Journal;
 import forms.Login;
 import java.util.logging.Level;
@@ -39,7 +40,8 @@ public class LoginController {
         if (validCredentials) {
             CodeValueDAO.loadCodes(request);
             Journal journal = new Journal();
-            journal.loadEntries();
+            //journal.loadEntries();
+            journal.setJournal(JournalEntryDAO.getAllEntries());
             mv = new ModelAndView("viewJournalEntries");
             mv.addObject("message", "Here are the entries");
             mv.addObject("journal", journal.getJournal());

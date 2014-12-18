@@ -21,7 +21,13 @@ public class JournalEntry {
     @NotNull
     @Size(min=1, max=100, message="The description must be between {min} and {max} characters.")
     private String entry;
-    
+    /*
+    * Added entry id for database management purposes.
+    *
+    * @author Logan Noonan
+    * @since 20141203
+    */
+    private int entryId;
     private String dateOfEntry;
     private String weight;
 
@@ -103,6 +109,16 @@ public class JournalEntry {
     public void setEntry(String entry) {
         this.entry = entry;
     }
+    
+    public int getEntryId() {
+        return entryId;
+    }
+
+    public void setEntryId(int entryId) {
+        this.entryId = entryId;
+    }
+    
+    
 
     public String getDateOfEntry() {
         return dateOfEntry;
